@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 import { DB_URL, PORT } from './config.js'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import chatbotController from './chatbot.controller.js'
+import chatbotController from './controllers/chatbot.controller.js'
 
 
 const app = express()
