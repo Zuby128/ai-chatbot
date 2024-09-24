@@ -4,6 +4,7 @@ import { DB_URL, PORT } from './config.js'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import chatbotController from './controllers/chatbot.controller.js'
+import sessionController from './controllers/session.controller.js'
 
 
 const app = express()
@@ -26,6 +27,7 @@ mongoose
 
 
 app.use('/chatbot', chatbotController)
+app.use('/session', sessionController)
 
 
 app.listen(port, () => {
