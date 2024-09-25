@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import { DB_URL, PORT } from './config.js'
+import { DB_URL, OPENAI_API_KEY, PORT } from './config.js'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import chatbotController from './controllers/chatbot.controller.js'
