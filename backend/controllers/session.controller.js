@@ -1,18 +1,18 @@
 import express from 'express'
-import { createSession } from '../services/session.service.js';
-import { errorMessage, notFoundMessage, successMessage } from '../utils/messages.js';
+import { errorMessage, notFoundMessage } from '../utils/messages.js';
+import { getSessionMessages } from '../services/session.service.js';
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.get("/:sessionId", async (req, res) => {
     try {
-        const { sessionId } = req.body
+        const { sessionId } = req.params
 
         if (!sessionId) return res.status(400).json({ message: notFoundMessage('Session ID') })
 
-        await createSession(sessionId)
+        const messages = await getSessionMessages(sessionId)
 
-        res.status(200).json({ message: successMessage('session') })
+        res.status(201).send(messages)
     } catch (error) {
         res.status(500).json({ message: errorMessage() })
     }

@@ -26,7 +26,7 @@ mongoose
     })
 
 
-app.use('/chatbot', chatbotController)
+app.use('/chat', chatbotController)
 app.use('/session', sessionController)
 
 
