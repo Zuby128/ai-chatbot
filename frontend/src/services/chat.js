@@ -15,8 +15,9 @@ export const sendMessage = async (body) => {
 
 export const getSessionMessages = async (sessionId) => {
     try {
-        const { data } = await axios.get(`${URL}/session/${sessionId}`)
-        return data
+        const { data, status } = await axios.get(`${URL}/session/${sessionId}`)
+        console.log(status)
+        return { data: data, status: status }
     } catch (error) {
         toast.error(MESSAGE_ERROR)
     }

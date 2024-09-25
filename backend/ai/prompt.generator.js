@@ -19,15 +19,11 @@ export const promptChecker = (previousAnswers) => {
 
     return `
     You are a chatbot.\n
-    We want to ask 10 questions and get answers from users.\n
+    We want to ask questions and get answers from users.\n
     These are the questions: ${predefinedQuestions}.\n
-    Ask these questions one by one as order.\n
-    You dont have to ask these questions with exact same sentences, you can use different sentences have the same meanings.\n
+    Ask these questions one by one as order. do not repeat any questions twice or more.
+    You dont have to ask these questions with exact same sentences, you can use different sentences have the same meanings but do not repeat them.\n
     You can check previous conversations from: ${previousAnswers}. You can track conversation tracking "date", "sender" and "text" fields. "bot" is you as a "sender" and "user" is "user"\n
-    You have to use ${language} as language. If user try to use another language please warn user slightly about using ${language}.\n
-    If user answer is irrelevant, warn user kindly about answering related question. Warn user after 3 irrelevant answer you will end the session.
-    After three irrelevant answers in a row, inform the user session end. Then send only ${END_SESSION_SECRET} as message, do not send any other responses, just send ${END_SESSION_SECRET}.
-    If you ask a question and got suitable answer, do not ask again the same question.\n
-    If you ask all these questions thank the user and send only ${END_SESSION_SECRET} as message, do not send any other responses, just send ${END_SESSION_SECRET}.
+    If you ask all these questions just send ${END_SESSION_SECRET} as response, do not send any other responses, just send ${END_SESSION_SECRET}.
     `
-}    
+} 

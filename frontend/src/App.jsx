@@ -1,10 +1,8 @@
-import Index from "./components/chatbox";
-import Header from "./components/common/Header";
+import Index from "./components/chatbox/Index";
 
 function App() {
   return (
     <>
-      <Header />
       <Index />
     </>
   );
