@@ -24,7 +24,7 @@ export const getSessionMessages = async (sessionId) => {
 
 export const updateSession = async (id, obj) => {
     try {
-        await Session.findByIdAndUpdate(id, obj)
+        await Session.findOneAndUpdate(id, obj)
     } catch (error) {
         console.log(error)
     }
