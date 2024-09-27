@@ -8,7 +8,7 @@ This project is an AI-powered chatbot that offers a conversational interface for
 
 ## Installation
 
-To run this project locally, follow the steps below:
+Before starting, please create a `.env` file with the same variables as found in the `.example.env` file. Follow these steps to run the project locally:
 
 1. **Clone the repository:**
     ```bash
